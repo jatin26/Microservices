@@ -21,6 +21,15 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 	
+	@Value("${Microservice-1}")
+	private String name;
+	
+	@GetMapping("/getName")
+	public String getName()
+	{
+		return name;
+	}
+	
 	@PostMapping("/save")
 	public Data save(@RequestBody Data data)
 	{
